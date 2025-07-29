@@ -7,7 +7,7 @@ body {
 header {
   background-color: black;
   color: white;
-  padding: 1em 2em;
+  padding: 1em 1em;
 }
 
 nav {
@@ -19,10 +19,11 @@ nav {
 .align {
   display: flex;
   align-items: center;
+  gap: 1em;
 }
 
 header img {
-  width: 15%;
+  width: 20%;
 }
 
 .nav-links {
