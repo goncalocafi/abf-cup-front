@@ -141,13 +141,14 @@ header img {
   white-space: normal;   
   word-break: break-word;
   overflow-wrap: break-word;
+  background-color: #c02227;
 }
 
 .group h3 {
   margin: 2px;
   border: 1px solid #c02227;
-  border-radius: 5px;
   padding: 5px;
+  background-color: white;
 }
 
 .semi {
