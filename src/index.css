@@ -35,7 +35,6 @@ header img {
   left: 0;
   right: 0;
   top: 60px;
-  padding: 1em 3em;
   z-index: 1000;
 }
 
@@ -62,6 +61,77 @@ nav a {
   color: white;
   font-size: 1.5rem;
   margin-left: auto;
+}
+
+.matches {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 1em;
+}
+
+.match-score {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  height: 40px;
+  text-align: center;
+}
+
+.match-score img {
+  width: 30px;
+  height: 30px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  min-width: 300px;
+}
+
+.team.away{
+  justify-content: start;
+}
+
+.team.home {
+  justify-content: end;
+}
+
+.score h3 {
+  margin: 0;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 60px;
+  gap: 2em;
+}
+
+.match-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.match-info p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+
+.match-date {
+  margin-bottom: 0;
+  padding-left: 1em;
+}
+
+.card {
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -92,5 +162,18 @@ nav a {
 
   .menu-toggle {
     display: none;
+  }
+
+  .match-score {
+    font-size: 2rem;
+  }
+
+  .match-score img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .match-info p{
+    font-size: 1rem;
   }
 }
