@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  background-color: black;
+  background-color: #c02227;
   color: white;
   padding: 1em 1em;
 }
@@ -129,9 +129,11 @@ nav a {
 }
 
 .card {
-  margin-bottom: 3em;
+  margin: 1em 5em 3em;
   display: flex;
   flex-direction: column;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #c02227;
 }
 
 @media (min-width: 768px) {
