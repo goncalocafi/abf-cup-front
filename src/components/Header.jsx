@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png"
-import React, { useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,9 +15,9 @@ export default function Header() {
                 </div>
 
                 <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#inicio">Resultados/Calendário</a></li>
                     <li><a href="#equipas">Equipas</a></li>
-                    <li><a href="#resultados">Resultados</a></li>
+                    <li><a href="#resultados">Classificação</a></li>
                     <li><a href="#contactos">Contactos</a></li>
                 </ul>
 
