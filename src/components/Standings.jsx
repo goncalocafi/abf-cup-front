@@ -69,7 +69,7 @@ export default function Standings() {
             <h3>Porto</h3>
           </div>
         </div>
-        <div className='quarters semi'>
+        <div className='quarters'>
           <div className='group'>
             <h3>Vencedor A</h3>
             <h3>Vencedor C</h3>
@@ -79,7 +79,7 @@ export default function Standings() {
             <h3>Vencedor H</h3>
           </div>
         </div>
-        <div className='quarters final'>
+        <div className='quarters'>
           <div className='group'>
             <h3>Vencedor A</h3>
             <h3>Vencedor C</h3>
