@@ -132,6 +132,7 @@ header img {
   flex-direction: column;
   gap: 1em;
   text-align: center;
+  justify-content: space-evenly;
 }
 
 .group {
@@ -151,28 +152,15 @@ header img {
   background-color: white;
 }
 
-.semi {
-  position: relative;
-  gap: 6em;
-  top: 55px;
-}
-
-.final {
-  position: relative;
-  top: 145px;
-}
-
 .standings-tables {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   width: 90%;
   margin: 0 auto;
 }
 
 .group-table {
-  flex: 1 1 40rem;
   border-radius: 12px;
   padding: 1rem;
 }
