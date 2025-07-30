@@ -9,6 +9,7 @@ header {
   color: white;
   text-align: center;
   padding: 1em 1em;
+  justify-content: space-between;
 }
 
 .logo-container {
@@ -57,7 +58,7 @@ header img {
 
 .match-score img {
   width: 30px;
-  height: 30px;
+  height: auto;
 }
 
 .team {
@@ -119,6 +120,10 @@ header img {
   text-decoration: underline;
 }
 
+.nav-link:hover {
+  color: black;
+}
+
 .standings {
   display: flex;
   margin: 1em;
@@ -154,7 +159,7 @@ header img {
 
 .standings-tables {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   width: 90%;
   margin: 0 auto;
@@ -194,6 +199,40 @@ header img {
   color: white;
 }
 
+.tournament-teams {
+  padding: 1em 3em;
+}
+
+
+.tournament-teams a {
+  text-decoration: none;
+  color: black;
+}
+
+.tournament-teams img {
+  width: 40px;
+  height: 40px;
+}
+
+.teams-list {
+  border: 1px solid #c02227;
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+  gap: 1em;
+  white-space: normal;   
+  word-break: break-word;
+  overflow-wrap: break-word;
+  border-radius: 5px;
+}
+
+.teams-list:hover {
+  background-color: #c02227;
+  cursor: pointer;
+  color: white;
+}
+
 
 @media (min-width: 768px) {
   header {
@@ -227,7 +266,6 @@ header img {
 
   .match-score img {
     width: 70px;
-    height: 70px;
   }
 
   .match-info p{
@@ -241,5 +279,18 @@ header img {
   .group {
     width: 300px;
     max-width: 300px;
+  }
+
+  .standings-tables {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .teams-list {
+    font-size: 2rem;
+  }
+
+  .teams-list img {
+    width: 80px;
+    height: auto;
   }
 }

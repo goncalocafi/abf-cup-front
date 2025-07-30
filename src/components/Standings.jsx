@@ -90,7 +90,6 @@ export default function Standings() {
       <section className="standings-tables">
         {groupsOrdenados.map((group, index) => (
           <div className="group-table" key={index}>
-            {console.log(group)}
             <h3>{group.nome}</h3>
             <table>
               <thead>
