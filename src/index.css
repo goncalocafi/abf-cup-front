@@ -232,6 +232,26 @@ header img {
   color: white;
 }
 
+.admin-teams {
+  padding: 1em 2em;
+  align-items: end;
+}
+
+.add-team {
+  background-color: #c02227;
+  color: white;
+  font-weight: bold;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+.teams-added {
+  margin: 1em;
+  text-align: center;
+}
 
 @media (min-width: 768px) {
   header {
