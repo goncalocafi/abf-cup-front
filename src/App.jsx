@@ -7,6 +7,7 @@ import AdminTeams from './components/admin/AdminTeams'
 import AdminTeamsPlayer from './components/admin/AdminTeamPlayer'
 import AdminHeader from './components/admin/AdminHeader'
 import { BrowserRouter, Routes, Route, useLocation} from 'react-router-dom'
+import AddTeams from './components/admin/AddTeams'
 
 function Layout() {
   const location = useLocation()
@@ -22,6 +23,7 @@ function Layout() {
           <Route path="/teams/:id" element={<TeamDetail />} />
           <Route path="/admin" element={<AdminTeams />} />
           <Route path="/admin/:id" element={<AdminTeamsPlayer />} />
+          <Route path="/admin/addTeam" element={<AddTeams />} />
         </Routes>
     </>
   )

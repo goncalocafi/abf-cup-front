@@ -237,20 +237,96 @@ header img {
   align-items: end;
 }
 
-.add-team {
+.add-team-btn {
   background-color: #c02227;
   color: white;
   font-weight: bold;
-  padding: 1em 2em;
+  padding: 0.5em;
   border: none;
   border-radius: 5px;
-  display: block;
-  margin: 0 0 0 auto;
+  width: 20%;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.add-team {
+  margin: 1em;
+}
+
+.add-team form {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-name {
+  border-radius: 5px;
+  border: 2px solid #c02227;
+  padding: 1em 1em;
+  margin-bottom: 2em;
+}
+
+.img-input {
+  margin-bottom: 2em;
+}
+
+.add-team select {
+  border-radius: 5px;
+  border: 2px solid #c02227;
+  padding: 0.5em;
+  margin-bottom: 2em;
+}
+
+.add-team button {
+  background-color: #c02227;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 1em;
+  border: none;
+}
+
+.organize-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.organize-btns select {
+  height: 40px;
+}
+
+.equipa-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 2em 0 0;
+  border: 1px solid #c02227;
+  border-radius: 5px;
+  padding: 1em;
+  white-space: normal;   
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.equipa-card img {
+  width: 60px;
 }
 
 .teams-added {
-  margin: 1em;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1em;
+}
+
+.teams-added-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.teams-added-info h3, p {
+  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -310,5 +386,10 @@ header img {
 
   .teams-list img {
     width: 80px;
+  }
+
+  .teams-added {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 }

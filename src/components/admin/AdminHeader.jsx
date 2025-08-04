@@ -11,7 +11,7 @@ export default function AdminHeader() {
 
 
             <ul className="nav-links">
-                <li><NavLink to="/" className={({isActive}) => (isActive? "nav-link active" : "nav-link")}>Equipas</NavLink></li>
+                <li><NavLink to="/admin" className={({isActive}) => (isActive? "nav-link active" : "nav-link")}>Equipas</NavLink></li>
                 <li><NavLink to="/teams" className={({isActive}) => (isActive? "nav-link active" : "nav-link")}>Jogos</NavLink></li>
                 <li><NavLink to="/standings" className={({isActive}) => (isActive? "nav-link active" : "nav-link")}>Grupos</NavLink></li>
             </ul>

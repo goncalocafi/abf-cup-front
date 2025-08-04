@@ -1,18 +1,70 @@
 import { NavLink } from "react-router-dom"
+import { fetchEscaloes } from "../../hooks/useEscaloes"
+import { useEffect, useState } from "react"
+import { fetchEquipa } from "../../hooks/useEquipas"
 
 export default function AdminTeams() {
-    const team = {
-            name: "Benfica",
-            id: 1
-        }
-    
+  const [escaloes, setEscaloes] = useState([]);
+  const [equipas, setEquipas] = useState([]);
+  const [escalaoSelecionado, setEscalaoSelecionado] = useState("")
 
-    return (
-        <section className="admin-teams">
-            <button className="add-team">Adicionar Equipa</button>
-            <div className="teams-added"> 
-                <NavLink to={`${team.id}`}>{team.name}</NavLink> 
+  useEffect(() => {
+    const carregarDados = async () => {
+      const escaloesData = await fetchEscaloes();
+      const equipasData = await fetchEquipa();
+      setEscaloes(escaloesData);
+      setEquipas(equipasData);
+    };
+    carregarDados();
+  }, []);
+
+  const URL_IMG = import.meta.env.VITE_URL_BACKEND;
+
+  const teamsDisplay = equipas.map((equipa) => (
+            <div className="equipa-card" key={equipa.id}>
+              {equipa.logoUrl && (
+                <img
+                  src={`${URL_IMG}${equipa.logoUrl}`}
+                  alt={equipa.nome}
+                />
+              )}
+              <div className="teams-added-info">
+                <h3>{equipa.nome}</h3>
+                <p>{equipa.escalao}</p>
+              </div>
             </div>
-        </section>
+          ))
+          
+    const escaloesDisplay = escaloes.map((escalao, index) => { 
+        return (
+          <option key={index} value={escalao}>
+            {escalao}
+          </option>
+        )
+    }
     )
+
+  return (
+    <section className="admin-teams">
+        <div className="organize-btns">
+            <select
+                value={escalaoSelecionado}
+                onChange={(e) => setEscalaoSelecionado(e.target.value)}
+                required
+            >
+                <option value="">Todos os escalões</option>
+                {escaloesDisplay}
+            </select>
+            <NavLink to={`addTeam`} className="add-team-btn">Adicionar Equipa</NavLink>
+        </div>
+
+      <div className="teams-added">
+        {equipas.length === 0 ? (
+          <p>Não há equipas adicionadas ainda.</p>
+        ) : (
+          teamsDisplay
+        )}
+      </div>
+    </section>
+  );
 }
