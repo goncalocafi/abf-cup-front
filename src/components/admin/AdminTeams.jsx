@@ -21,18 +21,20 @@ export default function AdminTeams() {
   const URL_IMG = import.meta.env.VITE_URL_BACKEND;
 
   const teamsDisplay = equipas.map((equipa) => (
-            <div className="equipa-card" key={equipa.id}>
-              {equipa.logoUrl && (
-                <img
-                  src={`${URL_IMG}${equipa.logoUrl}`}
-                  alt={equipa.nome}
-                />
-              )}
-              <div className="teams-added-info">
-                <h3>{equipa.nome}</h3>
-                <p>{equipa.escalao}</p>
+            <NavLink className={"equipa-card-link"} to={`admin/${equipa.id}`}>
+              <div className="equipa-card" key={equipa.id}>
+                {equipa.logoUrl && (
+                  <img
+                    src={`${URL_IMG}${equipa.logoUrl}`}
+                    alt={equipa.nome}
+                  />
+                )}
+                <div className="teams-added-info">
+                  <h3>{equipa.nome}</h3>
+                  <p>{equipa.escalao}</p>
+                </div>
               </div>
-            </div>
+            </NavLink>
           ))
           
     const escaloesDisplay = escaloes.map((escalao, index) => { 

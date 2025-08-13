@@ -307,6 +307,12 @@ header img {
   white-space: normal;   
   word-break: break-word;
   overflow-wrap: break-word;
+  min-height: 100px;
+}
+
+.equipa-card-link {
+  text-decoration: none;
+  color: black;
 }
 
 .equipa-card img {
