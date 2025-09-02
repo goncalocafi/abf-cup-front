@@ -20,8 +20,12 @@ export default function AdminTeams() {
 
   const URL_IMG = import.meta.env.VITE_URL_BACKEND;
 
-  const teamsDisplay = equipas.map((equipa) => (
-            <NavLink className={"equipa-card-link"} to={`admin/${equipa.id}`}>
+  const equipasFiltradas = escalaoSelecionado
+    ? equipas.filter((equipa) => (equipa.escalao?.id ?? null) === Number(escalaoSelecionado))
+    : equipas;
+
+  const teamsDisplay = equipasFiltradas.map((equipa) => (
+            <NavLink className={"equipa-card-link"} to={`${equipa.id}`}>
               <div className="equipa-card" key={equipa.id}>
                 {equipa.logoUrl && (
                   <img
@@ -31,20 +35,15 @@ export default function AdminTeams() {
                 )}
                 <div className="teams-added-info">
                   <h3>{equipa.nome}</h3>
-                  <p>{equipa.escalao}</p>
+                  {equipa.escalao? <p>{equipa.escalao?.nome}</p> : <p>Escalão não definido</p>}
                 </div>
               </div>
             </NavLink>
           ))
           
-    const escaloesDisplay = escaloes.map((escalao, index) => { 
-        return (
-          <option key={index} value={escalao}>
-            {escalao}
-          </option>
-        )
-    }
-    )
+    const escaloesDisplay = escaloes.map((escalao) => (
+      <option key={escalao.id} value={escalao.id}>{escalao.nome}</option>
+    ))
 
   return (
     <section className="admin-teams">
