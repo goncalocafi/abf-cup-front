@@ -11,13 +11,19 @@ export const fetchEquipa = async () => {
     return data
 }
 
-export const criarEquipa = async (equipa) => {
+export const fetchEquipaById = async (id) => {
+  const res = await fetch(`${API_URL}/equipas/${id}`);
+  if (!res.ok) throw new Error("Erro ao carregar equipa");
+  return await res.json();
+};
+
+export const criarEquipa = async ({ nome, logoUrl, escalaoId, grupoId }) => {
   const res = await fetch(`${API_URL}/equipas`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(equipa),
+    body: JSON.stringify({ nome, logoUrl, escalaoId, grupoId }),
   })
 
   if (!res.ok) throw new Error("Erro ao criar equipa")
